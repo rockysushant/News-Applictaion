@@ -14,8 +14,8 @@ import com.squareup.picasso.Picasso;
 
 public class NewsDetailActivity extends AppCompatActivity {
 
-    String titleTV,desc,content,imageUrl,url;
-    private TextView titleTv,subDescTV,contentTV;
+    String title,desc,content,imageUrl,url;
+    private TextView titleTV,subDescTV,contentTV;
     private ImageView newsIV;
     private Button readNewsBtn;
 
@@ -33,7 +33,7 @@ public class NewsDetailActivity extends AppCompatActivity {
         titleTV = findViewById(R.id.idTVTitle);
         subDescTV = findViewById(R.id.idTVSubDesc);
         contentTV = findViewById(R.id.idTVContent);
-        newsIV = findViewById(R.id.idTvNews);
+        newsIV = findViewById(R.id.idIVNews);
         readNewsBtn = findViewById(R.id.idBtnReadNews);
         titleTV.setText(title);
         subDescTV.setText(desc);
@@ -42,17 +42,11 @@ public class NewsDetailActivity extends AppCompatActivity {
         readNewsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
+                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+               // i.setData());
                 startActivity(i);
             }
         });
-
-
-
-
-
-
 
     }
 }

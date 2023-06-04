@@ -19,7 +19,7 @@ public class CategoryRVAdapter extends RecyclerView.Adapter<CategoryRVAdapter.Vi
     private Context context;
     private CategoriesClickInterface categoriesClickInterface;
 
-    public CategoryRVAdapter(ArrayList<Articles> categoryRVModals, Context context, CategoriesClickInterface categoriesClickInterface) {
+    public CategoryRVAdapter(ArrayList<CategoryRVModal> categoryRVModals, Context context, CategoriesClickInterface categoriesClickInterface) {
         this.categoryRVModals = categoryRVModals;
         this.context = context;
         this.categoriesClickInterface = categoriesClickInterface;

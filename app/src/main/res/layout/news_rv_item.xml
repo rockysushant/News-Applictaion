@@ -26,7 +26,7 @@
             android:id="@+id/idTVNewsHeading"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/idTvNews"
+            android:layout_below="@+id/idIvNews"
             android:textColor="@color/yellow"
             android:text="New Heading"
             android:textStyle="bold"

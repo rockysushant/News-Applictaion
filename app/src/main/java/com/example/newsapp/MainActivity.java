@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements CategoryRVAdapter
     private RecyclerView newsRv, categoryRv;
     private ProgressBar loadingPB;
     private ArrayList<Articles> articlesArrayList;
-    private ArrayList<Articles> categoryRVModalArrayList;
+    private ArrayList<CategoryRVModal> categoryRVModalArrayList = new ArrayList<>();
     private CategoryRVAdapter categoryRVAdapter;
     private NewsRVAdapter newsRVAdapter;
 
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements CategoryRVAdapter
         newsRv.setAdapter(newsRVAdapter);
         categoryRv.setAdapter(categoryRVAdapter);
         getCategories();
-        getNews("All");
+        getNews("science");
         newsRVAdapter.notifyDataSetChanged();
 
 
@@ -70,25 +71,32 @@ public class MainActivity extends AppCompatActivity implements CategoryRVAdapter
     private void getNews(String category){
         loadingPB.setVisibility(View.VISIBLE);
         articlesArrayList.clear();
-        String categoryURL = "https://newsapi.org/v2/top-headlines/sources?category=" +category+ "&apiKey=c020f1d1cda04895ae5c3b4834c4f463";
-        String url = "https://newsapi.org/v2/top-headlines/sources?apiKey="c020f1d1cda04895ae5c3b4834c4f463";
-            String BASE_URL = "https://newsapi.org/";
-        Retrofit retrofit new Retrofit.Builder()
+
+        String categoryURL = "v2/top-headlines?category=" +category+ "&apiKey=c020f1d1cda04895ae5c3b4834c4f463";
+        String url = "v2/top-headlines?country=in&excludeDomains=stackoverflow.com&sortBy=publishedAt&language=en&apiKey=c020f1d1cda04895ae5c3b4834c4f463";
+        String BASE_URL = "https://newsapi.org/";
+
+        Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        Retrofit retrofitAPI = retrofit.create(RetrofitAPI.class);
+        RetrofitAPI retrofitAPI = retrofit.create(RetrofitAPI.class);
         Call<NewsModal> call;
         if(category.equals("ALL")){
             call = retrofitAPI.getAllNews(url);
 
         }else{
             call  = retrofitAPI.getNewsByCategory(categoryURL);
+
         }
 
         call.enqueue(new Callback<NewsModal>() {
+
+
+
             @Override
             public void onResponse(Call<NewsModal> call, Response<NewsModal> response) {
+                Log.d("url", response.raw().request().url().toString());
                 NewsModal newsModal = response.body();
                 loadingPB.setVisibility(View.GONE);
                 ArrayList<Articles> articles = newsModal.getArticles();
