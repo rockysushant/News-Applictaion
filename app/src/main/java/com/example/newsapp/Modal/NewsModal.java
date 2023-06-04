@@ -1,4 +1,6 @@
-package com.example.newsapp;
+package com.example.newsapp.Modal;
+
+import com.example.newsapp.Articles;
 
 import java.util.ArrayList;
 

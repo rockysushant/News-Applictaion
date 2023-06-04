@@ -9,6 +9,12 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.newsapp.Adapter.CategoryRVAdapter;
+import com.example.newsapp.Adapter.NewsRVAdapter;
+import com.example.newsapp.Api.RetrofitAPI;
+import com.example.newsapp.Modal.CategoryRVModal;
+import com.example.newsapp.Modal.NewsModal;
+
 import java.util.ArrayList;
 
 import retrofit2.Call;
@@ -45,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements CategoryRVAdapter
         newsRv.setAdapter(newsRVAdapter);
         categoryRv.setAdapter(categoryRVAdapter);
         getCategories();
-        getNews("science");
+        getNews("Science");
         newsRVAdapter.notifyDataSetChanged();
 
 

@@ -1,4 +1,4 @@
-package com.example.newsapp;
+package com.example.newsapp.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +11,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.newsapp.Articles;
+import com.example.newsapp.NewsDetailActivity;
+import com.example.newsapp.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -42,12 +45,12 @@ public class NewsRVAdapter  extends RecyclerView.Adapter<NewsRVAdapter.ViewHolde
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent  = new Intent(context,NewsDetailActivity.class);
+                Intent intent  = new Intent(context, NewsDetailActivity.class);
                 intent.putExtra("title",articles.getTitle());
-                intent.putExtra("content",articles.getTitle());
-                intent.putExtra("desc",articles.getTitle());
-                intent.putExtra("image",articles.getTitle());
-                intent.putExtra("url",articles.getTitle());
+                intent.putExtra("content",articles.getContent());
+                intent.putExtra("desc",articles.getDescription());
+                intent.putExtra("image",articles.getUrlToImage());
+                intent.putExtra("url",articles.getUrl());
 
                 context.startActivity(intent);
 
