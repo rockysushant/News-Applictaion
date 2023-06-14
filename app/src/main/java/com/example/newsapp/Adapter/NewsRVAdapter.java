@@ -7,15 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.newsapp.Articles;
 import com.example.newsapp.NewsDetailActivity;
 import com.example.newsapp.R;
 import com.squareup.picasso.Picasso;
-
 import java.util.ArrayList;
 
 public class NewsRVAdapter  extends RecyclerView.Adapter<NewsRVAdapter.ViewHolder> {
@@ -53,7 +50,6 @@ public class NewsRVAdapter  extends RecyclerView.Adapter<NewsRVAdapter.ViewHolde
                 intent.putExtra("url",articles.getUrl());
 
                 context.startActivity(intent);
-
             }
         });
     }
@@ -71,7 +67,6 @@ public class NewsRVAdapter  extends RecyclerView.Adapter<NewsRVAdapter.ViewHolde
             titleTV = itemView.findViewById(R.id.idTVNewsHeading);
             subTitleTV = itemView.findViewById(R.id.idTVSubTitle);
             newsIV = itemView.findViewById(R.id.idIvNews);
-
         }
     }
 }

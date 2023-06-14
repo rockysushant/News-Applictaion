@@ -54,6 +54,9 @@ public class Articles {
         this.urlToImage = urlToImage;
         this.url = url;
         this.content = content;
+
     }
+
+        // hoew t o load image from url using glide in andeiid
 
 }
