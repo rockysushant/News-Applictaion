@@ -27,3 +27,22 @@ An News App Using Retrofit And Api Along with Firebase Login
 
 
 
+//   xxx
+
+
+
+
+<img align="left" width="320" height="700" src="https://github.com/rockysushant/News-Applictaion/assets/99118017/48bb66f6-f955-4a6c-a9cb-be762850dd58">
+<img align="right" width="320" height="700" src="https://github.com/rockysushant/News-Applictaion/assets/99118017/a1822945-f77b-47c7-8685-6307d6847a97">
+
+
+
+
+
+
+
+
+
+
+
+
