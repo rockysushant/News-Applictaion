@@ -10,11 +10,6 @@ import android.view.ViewGroup;
 
 import com.example.newsapp.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Settings#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class Settings extends Fragment {
 
 

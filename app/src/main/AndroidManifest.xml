@@ -8,8 +8,8 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:icon="@drawable/a"
+        android:label="The Daily Planet"
         android:supportsRtl="true"
         android:theme="@style/Theme.NewsApp"
         tools:targetApi="31">
@@ -28,6 +28,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".NewsDetailActivity"
             android:exported="false" />

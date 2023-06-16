@@ -42,11 +42,15 @@ public class NewsDetailActivity extends AppCompatActivity {
         readNewsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-               // i.setData());
+                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://news-final-6a6d1.firebaseapp.com/"));
                 startActivity(i);
             }
         });
+
+
+
+
+
 
     }
 }

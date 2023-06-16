@@ -57,6 +57,5 @@ public class Articles {
 
     }
 
-        // hoew t o load image from url using glide in andeiid
 
 }
