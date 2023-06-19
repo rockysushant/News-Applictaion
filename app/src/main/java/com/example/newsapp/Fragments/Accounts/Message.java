@@ -1,4 +1,4 @@
-package com.example.newsapp.Fragments;
+package com.example.newsapp.Fragments.Accounts;
 
 import android.os.Bundle;
 
@@ -10,10 +10,10 @@ import android.view.ViewGroup;
 
 import com.example.newsapp.R;
 
-public class Location extends Fragment {
+public class Message extends Fragment {
 
 
-    public Location() {
+    public Message() {
         // Required empty public constructor
     }
 
@@ -22,6 +22,6 @@ public class Location extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_location, container, false);
+        return inflater.inflate(R.layout.fragment_message, container, false);
     }
 }

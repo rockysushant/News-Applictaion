@@ -11,6 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.newsapp.Fragments.Accounts.Location;
+import com.example.newsapp.Fragments.Accounts.Message;
+import com.example.newsapp.Fragments.Accounts.Myprofile;
+import com.example.newsapp.Fragments.Accounts.Request;
+import com.example.newsapp.Fragments.Accounts.Settings;
 import com.example.newsapp.MainActivity;
 import com.example.newsapp.R;
 
