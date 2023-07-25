@@ -39,12 +39,17 @@ public class NewsDetailActivity extends AppCompatActivity {
         subDescTV.setText(desc);
         contentTV.setText(content);
         Picasso.get().load(imageUrl).into(newsIV);
+
+
+
+
         readNewsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://news-final-6a6d1.firebaseapp.com/"));
                 startActivity(i);
             }
+
         });
 
 

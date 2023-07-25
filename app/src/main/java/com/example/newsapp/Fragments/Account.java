@@ -1,5 +1,6 @@
 package com.example.newsapp.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -16,6 +17,7 @@ import com.example.newsapp.Fragments.Accounts.Message;
 import com.example.newsapp.Fragments.Accounts.Myprofile;
 import com.example.newsapp.Fragments.Accounts.Request;
 import com.example.newsapp.Fragments.Accounts.Settings;
+import com.example.newsapp.LOGIN.login;
 import com.example.newsapp.MainActivity;
 import com.example.newsapp.R;
 
@@ -60,6 +62,7 @@ public class Account extends Fragment {
 
         TextView request = view.findViewById(R.id.request);
         request.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 ((MainActivity)getActivity()).loadFrag(new Request(), false);
@@ -80,9 +83,6 @@ public class Account extends Fragment {
         });
 
 
-
-
-
         TextView settings = view.findViewById(R.id.settings);
         settings.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,5 +91,17 @@ public class Account extends Fragment {
 
             }
         });
+
+
+
+
+
+
+
+
     }
+
+
+
+
 }
