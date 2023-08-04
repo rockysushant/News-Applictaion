@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -14,6 +15,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.newsapp.Fragments.Home;
 import com.example.newsapp.MainActivity;
 import com.example.newsapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -62,6 +64,21 @@ public class login extends AppCompatActivity {
             public void onClick(View view) {
                 String email = mEmail.getText().toString().trim();
                 String password = mPassword.getText().toString().trim();
+
+
+                SharedPreferences pref = getSharedPreferences("login",MODE_PRIVATE);
+                SharedPreferences.Editor editor = pref.edit();
+
+
+                editor.putBoolean("flag",true);
+                editor.apply();
+
+                Intent  iHome  = new Intent(login.this, Home.class);
+                startActivity(iHome);
+
+
+
+
 
                 if(TextUtils.isEmpty(email)){
                     mEmail.setError("Email Is Required");

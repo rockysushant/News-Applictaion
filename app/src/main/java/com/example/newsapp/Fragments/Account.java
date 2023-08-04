@@ -1,6 +1,9 @@
 package com.example.newsapp.Fragments;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -97,21 +100,24 @@ public class Account extends Fragment {
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(requireContext(),login.class);
-                startActivity(i);
-                requireActivity().finish();
 
-//                ((MainActivity)getActivity()).loadFrag(new Settings(), false);
 
+                SharedPreferences pref = getSharedPreferences("login",MODE_PRIVATE);
+                SharedPreferences.Editor editor = pref.edit();
+
+
+                editor.putBoolean("flag", false);
+                editor.apply();
+
+
+
+
+
+//                Intent i = new Intent(requireContext(),login.class);
+//                startActivity(i);
+//                requireActivity().finish();
             }
         });
-
-
-
-
-
-
-
 
 
 
