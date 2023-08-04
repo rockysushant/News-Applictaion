@@ -102,20 +102,20 @@ public class Account extends Fragment {
             public void onClick(View view) {
 
 
-                SharedPreferences pref = getSharedPreferences("login",MODE_PRIVATE);
-                SharedPreferences.Editor editor = pref.edit();
+//                SharedPreferences pref = getSharedPreferences("login",MODE_PRIVATE);
+//                SharedPreferences.Editor editor = pref.edit();
+//
+//
+//                editor.putBoolean("flag", false);
+//                editor.apply();
 
 
-                editor.putBoolean("flag", false);
-                editor.apply();
 
 
 
-
-
-//                Intent i = new Intent(requireContext(),login.class);
-//                startActivity(i);
-//                requireActivity().finish();
+                Intent i = new Intent(requireContext(),login.class);
+                startActivity(i);
+                requireActivity().finish();
             }
         });
 

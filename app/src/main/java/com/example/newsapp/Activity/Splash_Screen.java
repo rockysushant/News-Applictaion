@@ -39,7 +39,7 @@ public class Splash_Screen extends AppCompatActivity {
 
            Intent iNext;
 
-           if(check){      // { FOR USER LOGGED IN}
+           if(check){   // { FOR USER LOGGED IN}
                iNext  = new Intent(Splash_Screen.this, Home.class);
 
            }else{  // {FOR FIRST TIME LOGIN}
