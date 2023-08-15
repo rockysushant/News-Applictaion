@@ -26,28 +26,26 @@ public class Splash_Screen extends AppCompatActivity {
 //        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 
-
-
         new Handler().postDelayed(() -> {
-//
-//            Intent i = new Intent(Splash_Screen.this, login.class);
-//            startActivity(i);
-//            finish();
 
             SharedPreferences pref = getSharedPreferences("login",MODE_PRIVATE);
-           Boolean check =   pref.getBoolean("flag",false);
+            boolean check =   pref.getBoolean("flag",false);
 
-           Intent iNext;
+            Intent iNext;
 
-           if(check){   // { FOR USER LOGGED IN}
-               iNext  = new Intent(Splash_Screen.this, Home.class);
+            if(check){   // { FOR USER LOGGED IN}
+
+               iNext  = new Intent(Splash_Screen.this, MainActivity.class);
 
            }else{  // {FOR FIRST TIME LOGIN}
+
                iNext = new Intent(Splash_Screen.this,login.class);
            }
 
            startActivity(iNext);
+           finish();
 
-        },2500);
+        },2000);
     }
 }
+

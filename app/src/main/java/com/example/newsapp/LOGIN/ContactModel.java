@@ -11,10 +11,6 @@ public class ContactModel {
 
     }
 
-    ContactModel(){
-
-    }
-
     public String getName() {
         return name;
     }

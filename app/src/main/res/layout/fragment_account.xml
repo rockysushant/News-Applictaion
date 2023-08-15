@@ -14,7 +14,18 @@
         android:layout_height="120dp"
         android:src="@drawable/mypic"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"/>
+        android:layout_marginTop="40dp"/>
+
+
+    <ImageView
+        android:id="@+id/backImg"
+        android:layout_width="match_parent"
+        android:layout_height="163dp"
+        android:src="@drawable/profile_ui"
+        android:layout_below="@+id/imageview_profile"
+
+        />
+
 
 
 
@@ -22,7 +33,6 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sushant Soni"
         android:textColor="#000"
         android:layout_below="@id/imageview_profile"
         android:layout_centerHorizontal="true"
@@ -50,9 +60,12 @@
     <LinearLayout
         android:id="@+id/Linearlayout"
         android:layout_width="match_parent"
+
+        android:layout_marginTop="40dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/desc"
-        android:layout_marginTop="30dp"
+        android:layout_below="@id/backImg"
+
+
         android:orientation="horizontal">
 
 
@@ -64,6 +77,7 @@
 
         <TextView
             android:id="@+id/myProfile"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="My Profile"
@@ -186,10 +200,13 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
             />
-
     </LinearLayout>
 
-    .
+
+
+
+
+    //  LOG OUT
 
 
     <LinearLayout
@@ -198,7 +215,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_below="@id/Linearlayout5"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="100dp"
         android:orientation="horizontal">
 
 

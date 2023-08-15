@@ -1,11 +1,10 @@
 package com.example.newsapp.Fragments;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-//import androidx.lifecycle.viewmodel.CreationExtras;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
@@ -28,13 +27,10 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-
 public class Home extends Fragment  implements CategoryRVAdapter.CategoriesClickInterface{
-
 
     private RecyclerView newsRv, categoryRv;
     private ProgressBar loadingPB;
-
     private ArrayList<Articles> articlesArrayList;
     private ArrayList<CategoryRVModal> categoryRVModalArrayList = new ArrayList<>();
     private CategoryRVAdapter categoryRVAdapter;
@@ -103,6 +99,7 @@ public class Home extends Fragment  implements CategoryRVAdapter.CategoriesClick
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
+
         RetrofitAPI retrofitAPI = retrofit.create(RetrofitAPI.class);
         Call<NewsModal> call;
         if(category.equals("ALL")){
@@ -116,7 +113,7 @@ public class Home extends Fragment  implements CategoryRVAdapter.CategoriesClick
         call.enqueue(new Callback<NewsModal>() {
 
 
-
+            @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onResponse(Call<NewsModal> call, Response<NewsModal> response) {
                 Log.d("url", response.raw().request().url().toString());

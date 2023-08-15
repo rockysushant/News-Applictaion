@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">The Daily Planet</string>
     <string name="MyDp">My Dp  </string>
+    <string name="readFullNews">Read Full News</string>
 
 
 

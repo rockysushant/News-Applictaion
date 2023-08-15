@@ -16,7 +16,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 public class NewsRVAdapter  extends RecyclerView.Adapter<NewsRVAdapter.ViewHolder> {
-    private ArrayList<Articles> articlesArrayList;
+    private final ArrayList<Articles> articlesArrayList;
     private Context context;
 
     public NewsRVAdapter(ArrayList<Articles> articlesArrayList, Context context) {

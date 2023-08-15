@@ -13,4 +13,7 @@ public interface RetrofitAPI {
     Call<NewsModal> getNewsByCategory(@Url String url);
 
 
+
+
+
 }

@@ -22,6 +22,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -61,10 +62,10 @@ public class Register extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
 
-        if (fAuth.getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-            finish();
-        }
+//        if (fAuth.getCurrentUser() != null) {
+//            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+//            finish();
+//        }
 
 
         // ALREADY ACCOUNT PLEASE LOGIN LOGIC
@@ -146,7 +147,6 @@ public class Register extends AppCompatActivity {
                                     Log.d(TAG, "onFailure:" + e.toString());
                                 }
                             });
-
                             startActivity(new Intent(getApplicationContext(), MainActivity.class));
 
                         } else {
