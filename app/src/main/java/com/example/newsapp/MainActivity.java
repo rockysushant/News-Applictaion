@@ -1,18 +1,13 @@
 package com.example.newsapp;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import android.annotation.SuppressLint;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
-
 import com.example.newsapp.Fragments.Account;
 import com.example.newsapp.Fragments.Home;
 import com.example.newsapp.Fragments.Notification;
@@ -39,11 +34,9 @@ public class MainActivity extends AppCompatActivity  {
 //                    getSupportActionBar().hide();
 
 
-
                 }else if(id==R.id.notification){
 
                     loadFrag(new Notification(),false);
-
 
 
                 }else if(id==R.id.account){
@@ -57,11 +50,10 @@ public class MainActivity extends AppCompatActivity  {
 
         bnView.setSelectedItemId(R.id.home);
 
-
     }
 
 
-    //   log oit dualoyyee
+    //  LOG OUT DIALOUGE
 
 //    public  void showAlertDialog(View v){
 //        AlertDialog.Builder alert = new AlertDialog.Builder(this);
@@ -94,11 +86,12 @@ public class MainActivity extends AppCompatActivity  {
 
     }
 
+
+
     @SuppressLint("SuspiciousIndentation")
     public void loadFrag(Fragment fragment, boolean flag){
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-
         if(flag) {
             ft.add(R.id.frame_layout, fragment);
             fm.popBackStack();

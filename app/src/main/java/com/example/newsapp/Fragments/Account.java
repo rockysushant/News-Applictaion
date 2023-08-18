@@ -1,9 +1,11 @@
 package com.example.newsapp.Fragments;
 
 import static android.content.Context.MODE_PRIVATE;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -38,6 +40,7 @@ public class Account extends Fragment {
     FirebaseAuth fAuth;
     private TextView title, desc;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -45,8 +48,10 @@ public class Account extends Fragment {
         return inflater.inflate(R.layout.fragment_account, container, false);
     }
 
+
+
     private void initializeFirebaseInstance() {
-        fAuth = FirebaseAuth.getInstance();
+        fAuth  = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
         userID = fAuth.getCurrentUser().getUid();
     }
@@ -76,9 +81,11 @@ public class Account extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         initializeFirebaseInstance();
         initView(view);
         getUserDataFromFirebase();
+
         TextView myProfile = view.findViewById(R.id.myProfile);
         myProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,6 +94,8 @@ public class Account extends Fragment {
 
             }
         });
+
+
 
         TextView message = view.findViewById(R.id.messgae);
         message.setOnClickListener(new View.OnClickListener() {
@@ -98,6 +107,9 @@ public class Account extends Fragment {
         });
 
 
+
+
+
         TextView request = view.findViewById(R.id.request);
         request.setOnClickListener(new View.OnClickListener() {
 
@@ -107,6 +119,8 @@ public class Account extends Fragment {
 
             }
         });
+
+
 
 
         TextView location = view.findViewById(R.id.location);
@@ -129,47 +143,26 @@ public class Account extends Fragment {
         });
 
 
-
-        //LOG - OUT
-
+        // LOG OUT BUTTON
 
         TextView btnLogout = view.findViewById(R.id.btnLogOut);
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-
                 SharedPreferences pref = requireContext().getSharedPreferences("login",MODE_PRIVATE);
                 SharedPreferences.Editor editor = pref.edit();
-
-
-               editor.clear();
+                editor.clear();
                 editor.apply();
 
 
-                Toast.makeText(requireContext(),"LOg Out Successfully",Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(),"Log Out Successfully",Toast.LENGTH_SHORT).show();
                 Intent  iHome  = new Intent(requireContext(), login.class);
                 startActivity(iHome);
                 requireActivity().finish();
 
-
-
-
-
-
-
-//
-//
-//                Intent i = new Intent(requireContext(),login.class);
-//                startActivity(i);
-//                requireActivity().finish();
-
-//                Toast.makeText(login.thi)
             }
         });
-
-
-
 
 
 
