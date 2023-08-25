@@ -19,13 +19,9 @@ import org.checkerframework.common.value.qual.StringVal;
 
 public class Myprofile extends Fragment {
 
-
     SwipeRefreshLayout refreshLayout;
     TextView textView;
-
     int number = 0;
-
-
 
 
     @Override

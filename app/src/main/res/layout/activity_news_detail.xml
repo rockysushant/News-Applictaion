@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:background="@color/black_shade_1"
         app:titleTextColor="@color/yellow"
-        app:title="News App"
+        app:title="@string/app_name"
 
 
         />

@@ -63,7 +63,7 @@ public class Account extends Fragment {
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 String userName = documentSnapshot.getString("fName");
                 title.setText(userName);
-                desc.setText(documentSnapshot.getString("phone"));
+                desc.setText(documentSnapshot.getString("email"));
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -160,7 +160,6 @@ public class Account extends Fragment {
                 Intent  iHome  = new Intent(requireContext(), login.class);
                 startActivity(iHome);
                 requireActivity().finish();
-
             }
         });
 

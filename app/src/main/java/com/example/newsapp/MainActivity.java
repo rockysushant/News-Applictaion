@@ -24,28 +24,19 @@ public class MainActivity extends AppCompatActivity  {
 
         bnView = findViewById(R.id.bnView);
 
-        bnView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int id = item.getItemId();
+        bnView.setOnNavigationItemSelectedListener(item -> {
+            int id = item.getItemId();
 
-                if(id==R.id.home){
-                    loadFrag(new Home(),false);
-//                    getSupportActionBar().hide();
+            if(id==R.id.home){
+                loadFrag(new Home(),false);
 
+            }else if(id==R.id.notification){
+                loadFrag(new Notification(),false);
 
-                }else if(id==R.id.notification){
-
-                    loadFrag(new Notification(),false);
-
-
-                }else if(id==R.id.account){
-
-                    loadFrag(new Account(),false);
-
-                }
-                return true;
+            }else if(id==R.id.account){
+                loadFrag(new Account(),false);
             }
+            return true;
         });
 
         bnView.setSelectedItemId(R.id.home);
