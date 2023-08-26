@@ -19,6 +19,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.07"
+        android:textStyle="italic"
+
         />
 
 
@@ -26,8 +28,11 @@
         android:id="@+id/fullName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:drawableStart="@drawable/baseline_emoji_people_24"
+        android:drawablePadding="7dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
 
         android:hint="Full name"
@@ -41,6 +46,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="0.1399999"
+        android:background="@drawable/custom_input"
+        android:textStyle="italic"
+
         />
 
 
@@ -55,13 +63,19 @@
         android:hint="E-mail"
         android:inputType="textPersonName"
         android:padding="10dp"
+
+
         android:textColor="@color/white"
         android:textColorHint="#D8D4D4"
         android:textSize="20sp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fullName"
+        android:drawableStart="@drawable/baseline_mail_24"
+        android:drawablePadding="10dp"
+        android:background="@drawable/custom_input"
+        android:textStyle="italic"
 
 
         />
@@ -72,6 +86,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+
+
         android:ems="10"
         android:hint="Password"
         android:inputType="textPersonName"
@@ -79,10 +95,14 @@
         android:textColor="@color/white"
         android:textColorHint="#D8D4D4"
         android:textSize="20sp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email"
+        android:drawableStart="@drawable/baseline_password_24"
+        android:drawablePadding="10dp"
+        android:background="@drawable/custom_input"
+        android:textStyle="italic"
 
 
         />
@@ -94,6 +114,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginTop="30dp"
+
         android:ems="10"
         android:hint="Phone"
         android:inputType="textPersonName"
@@ -101,11 +123,15 @@
         android:textColor="@color/white"
         android:textColorHint="#D8D4D4"
         android:textSize="20sp"
-        android:layout_marginTop="20dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password"
 
+        android:drawableStart="@drawable/baseline_phone_android_24"
+        android:drawablePadding="10dp"
+        android:background="@drawable/custom_input"
+        android:textStyle="italic"
 
         />
 
@@ -123,6 +149,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/phone"
+        android:textStyle="italic"
+
 
         />
 

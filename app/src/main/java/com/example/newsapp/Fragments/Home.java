@@ -1,5 +1,6 @@
 package com.example.newsapp.Fragments;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -112,6 +113,7 @@ public class Home extends Fragment  implements CategoryRVAdapter.CategoriesClick
         call.enqueue(new Callback<NewsModal>() {
 
 
+            @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onResponse(Call<NewsModal> call, Response<NewsModal> response) {
                 Log.d("url", response.raw().request().url().toString());
