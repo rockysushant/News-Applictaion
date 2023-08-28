@@ -9,9 +9,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.SearchView;
 import android.widget.Toast;
 import com.example.newsapp.Adapter.CategoryRVAdapter;
 import com.example.newsapp.Adapter.NewsRVAdapter;
@@ -36,11 +42,22 @@ public class Home extends Fragment  implements CategoryRVAdapter.CategoriesClick
     private CategoryRVAdapter categoryRVAdapter;
     private NewsRVAdapter newsRVAdapter;
 
+
+    ArrayAdapter<String> arrayAdapter;
+
+
+    ListView listView;
+    String[] name = {"All","Technology","Science","tech","hello"};
+
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false);
+
+
 
 
     }
@@ -67,10 +84,40 @@ public class Home extends Fragment  implements CategoryRVAdapter.CategoriesClick
 
         newsRVAdapter.notifyDataSetChanged();
 
+//        listView = view.findViewById(R.id.listView);
+//        arrayAdapter = new ArrayAdapter<String>(requireContext(), android.R.layout.simple_list_item_1,name);
+//        listView.setAdapter(arrayAdapter);
+//
+
+
+
     }
 
 
-
+//    @Override
+//    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+//
+//        requireActivity().getMenuInflater().inflate(R.menu.nav_items,menu);
+//        MenuItem menuItem = menu.findItem(R.id.action_search);
+//        SearchView searchView = (SearchView) menuItem;
+//        searchView.setQueryHint("Type here to search");
+//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//            @Override
+//            public boolean onQueryTextSubmit(String query) {
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onQueryTextChange(String newText) {
+//
+//                arrayAdapter.getFilter().filter(newText);
+//                return false;
+//            }
+//        });
+//
+//
+//        super.onCreateOptionsMenu(menu, inflater);
+//    }
 
     private void getCategories(){
         categoryRVModalArrayList.add(new CategoryRVModal("All","https://images.unsplash.com/photo-1570900808791-d530855f79e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWxsfGVufDB8fDB8fHww&auto=format&fit=crop&w=400&q=60"));
@@ -91,7 +138,7 @@ public class Home extends Fragment  implements CategoryRVAdapter.CategoriesClick
         loadingPB.setVisibility(View.VISIBLE);
         articlesArrayList.clear();
 
-        String categoryURL = "v4/top-headlines?category=" +category+ "&lang=en&country=in&max=1000&apikey=b4a658af58409c3a4ab6747ad68208bf";
+        String categoryURL = "v4/top-headlines?category=" +category+ "&lang=en&country=in&size=100&max=100&apikey=b4a658af58409c3a4ab6747ad68208bf";
         String url = "v4/top-headlines?category=general&lang=en&country=in&max=1000&apikey=b4a658af58409c3a4ab6747ad68208bf";
         String BASE_URL = "https://gnews.io/api/";
 

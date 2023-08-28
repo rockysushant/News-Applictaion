@@ -9,6 +9,13 @@
     android:background="@color/black_shade_1"
     tools:context=".Fragments.Home">
 
+
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/listView"
+/>
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/idToolbar"
         android:layout_width="match_parent"
@@ -46,6 +53,7 @@
         android:layout_below="@+id/idToolbar"
         android:layout_marginTop="0dp"
         android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/categories_rv_item" />
 
     <androidx.recyclerview.widget.RecyclerView

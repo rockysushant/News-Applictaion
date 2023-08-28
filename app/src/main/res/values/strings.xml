@@ -2,6 +2,13 @@
     <string name="app_name">The Daily Planet</string>
     <string name="MyDp">My Dp  </string>
     <string name="readFullNews">Read Full News</string>
+    <string name="password">Password</string>
+    <string name="login">Log In</string>
+    <string name="email">E-mail</string>
+    <string name="newAccount">New Account ?  Sign In</string>
+    <string name="remember">Remember Me</string>
+    <string name="lgnBtn">Login</string>
+
 
 
 

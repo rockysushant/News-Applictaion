@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item android:title="Home"
         android:icon="@drawable/baseline_home_24"
@@ -14,4 +15,10 @@
         android:id="@+id/account"
         />
 
+
+<!--    <item android:id="@+id/action_search"-->
+<!--        android:title="Search"-->
+<!--        android:icon="@drawable/baseline_youtube_searched_for_24"-->
+<!--        app:showAsAction="ifRoom|collapseActionView"-->
+<!--        app:actionViewClass="android.widget.SearchView" />-->
 </menu>

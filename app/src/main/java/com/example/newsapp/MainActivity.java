@@ -7,6 +7,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.Menu;
+
 import com.example.newsapp.Fragments.Account;
 import com.example.newsapp.Fragments.Home;
 import com.example.newsapp.Fragments.Notification;
@@ -29,16 +31,26 @@ public class MainActivity extends AppCompatActivity  {
             if(id==R.id.home){
                 loadFrag(new Home(),false);
 
+//                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+
             }else if(id==R.id.notification){
                 loadFrag(new Notification(),false);
+//                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 
             }else if(id==R.id.account){
                 loadFrag(new Account(),false);
+//                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+
             }
             return true;
+
         });
 
+
+
         bnView.setSelectedItemId(R.id.home);
+
+
 
     }
 
@@ -62,6 +74,11 @@ public class MainActivity extends AppCompatActivity  {
 
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
     public void onBackPressed() {
 //        super.onBackPressed();
         Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.frame_layout);
@@ -81,7 +98,11 @@ public class MainActivity extends AppCompatActivity  {
     @SuppressLint("SuspiciousIndentation")
     public void loadFrag(Fragment fragment, boolean flag){
         FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
+        FragmentTransaction ft = fm.beginTransaction().setCustomAnimations( R.anim.slide_in_left,  // enter
+                R.anim.slide_in_right,  // exit
+                R.anim.slide_out_right,   // popEnter
+                R.anim.slide_out_left );
+
         if(flag) {
             ft.add(R.id.frame_layout, fragment);
             fm.popBackStack();

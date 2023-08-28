@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,6 +40,7 @@ public class Account extends Fragment {
     String userID;
     FirebaseAuth fAuth;
     private TextView title, desc;
+    private ProgressBar mProgressBar;
 
 
     @Override
@@ -61,6 +63,7 @@ public class Account extends Fragment {
         documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
+                mProgressBar.setVisibility(View.GONE);
                 String userName = documentSnapshot.getString("fName");
                 title.setText(userName);
                 desc.setText(documentSnapshot.getString("email"));
@@ -76,6 +79,7 @@ public class Account extends Fragment {
     private void initView(View view){
         title = view.findViewById(R.id.title);
         desc = view.findViewById(R.id.desc);
+        mProgressBar = view.findViewById(R.id.progressBar);
     }
 
     @Override
