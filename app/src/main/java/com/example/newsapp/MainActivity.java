@@ -98,10 +98,11 @@ public class MainActivity extends AppCompatActivity  {
     @SuppressLint("SuspiciousIndentation")
     public void loadFrag(Fragment fragment, boolean flag){
         FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction().setCustomAnimations( R.anim.slide_in_left,  // enter
-                R.anim.slide_in_right,  // exit
-                R.anim.slide_out_right,   // popEnter
-                R.anim.slide_out_left );
+        FragmentTransaction ft = fm.beginTransaction();
+//        .setCustomAnimations( R.anim.slide_in_left,  // enter
+//                R.anim.slide_in_right,  // exit
+//                R.anim.slide_out_right,   // popEnter
+//                R.anim.slide_out_left );
 
         if(flag) {
             ft.add(R.id.frame_layout, fragment);

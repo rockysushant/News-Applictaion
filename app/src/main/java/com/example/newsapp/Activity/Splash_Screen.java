@@ -21,7 +21,7 @@ public class Splash_Screen extends AppCompatActivity {
 
 //        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
 
-        // BLACK HO JATA HAI
+//       CHANGE TO  BLACK ACTION BAR TITLE
 
 //        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -45,7 +45,7 @@ public class Splash_Screen extends AppCompatActivity {
            startActivity(iNext);
            finish();
 
-        },2000);
+        },1000);
     }
 }
 

@@ -14,8 +14,9 @@ public class Ask {
     //newsDetailActivity.java
 
 
-    //
-    //
+    // to de_attach file from git
+
+    // in Account up variable and down vriable
     //
 
 }

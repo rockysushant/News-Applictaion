@@ -1,5 +1,6 @@
 package com.example.newsapp.Fragments;
 
+import static android.app.Activity.RESULT_OK;
 import static android.content.Context.MODE_PRIVATE;
 
 import android.content.Intent;
@@ -10,10 +11,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,6 +45,13 @@ public class Account extends Fragment {
     FirebaseAuth fAuth;
     private TextView title, desc;
     private ProgressBar mProgressBar;
+
+    private final int GALLERY_REQ_CODE = 1000;
+    ImageView imageView;
+
+
+
+
 
 
     @Override
@@ -90,6 +101,20 @@ public class Account extends Fragment {
         initView(view);
         getUserDataFromFirebase();
 
+        imageView = view.findViewById(R.id.imageview_profile);  // image view image viww gallery top
+        Button button = view.findViewById(R.id.changeDp);
+
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Intent.ACTION_PICK);
+                i.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(i,GALLERY_REQ_CODE);
+
+            }
+        });
+
         TextView myProfile = view.findViewById(R.id.myProfile);
         myProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,7 +123,6 @@ public class Account extends Fragment {
 
             }
         });
-
 
 
         TextView message = view.findViewById(R.id.messgae);
@@ -111,9 +135,6 @@ public class Account extends Fragment {
         });
 
 
-
-
-
         TextView request = view.findViewById(R.id.request);
         request.setOnClickListener(new View.OnClickListener() {
 
@@ -123,8 +144,6 @@ public class Account extends Fragment {
 
             }
         });
-
-
 
 
         TextView location = view.findViewById(R.id.location);
@@ -172,6 +191,18 @@ public class Account extends Fragment {
     }
 
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
 
+        super.onActivityResult(requestCode, resultCode, data);
 
+        if(resultCode==RESULT_OK){
+            if(resultCode==GALLERY_REQ_CODE){
+                //for gallery
+
+                imageView.setImageURI(data.getData());
+
+            }
+        }
+    }
 }
