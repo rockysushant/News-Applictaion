@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bcmain"
+    android:background="@drawable/login"
     tools:context=".LOGIN.Register">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign Up"
+        android:text="@string/signUp"
         android:textColor="@color/white"
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -25,6 +25,7 @@
 
 
     <EditText
+        android:autofillHints="name"
         android:id="@+id/fullName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -35,7 +36,7 @@
         android:layout_marginTop="20dp"
         android:ems="10"
 
-        android:hint="Full name"
+        android:hint="@string/fullName"
         android:inputType="textPersonName"
         android:padding="10dp"
         android:textColor="@color/white"
@@ -55,12 +56,13 @@
 
     <EditText
         android:id="@+id/email"
+        android:autofillHints="emailAddress"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
-        android:hint="E-mail"
+        android:hint="@string/email"
         android:inputType="textPersonName"
         android:padding="10dp"
 
@@ -78,9 +80,10 @@
         android:textStyle="italic"
 
 
-        />
+        tools:ignore="TextFields" />
 
     <EditText
+        android:autofillHints="password"
         android:id="@+id/password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -89,7 +92,7 @@
 
 
         android:ems="10"
-        android:hint="Password"
+        android:hint="@string/password"
         android:inputType="textPersonName"
         android:padding="10dp"
         android:textColor="@color/white"
@@ -105,7 +108,7 @@
         android:textStyle="italic"
 
 
-        />
+        tools:ignore="TextFields" />
 
 
     <EditText
@@ -117,7 +120,7 @@
         android:layout_marginTop="30dp"
 
         android:ems="10"
-        android:hint="Phone"
+        android:hint="@string/phone"
         android:inputType="textPersonName"
         android:padding="10dp"
         android:textColor="@color/white"
@@ -132,18 +135,19 @@
         android:drawablePadding="10dp"
         android:background="@drawable/custom_input"
         android:textStyle="italic"
+        android:autofillHints="phone"
 
-        />
+        tools:ignore="TextFields" />
 
 
     <Button
         android:id="@+id/Registerbtn"
-        android:layout_width="0dp"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
         android:layout_marginTop="42dp"
-        android:text="Register"
+        android:text="@string/register"
         android:textSize="15sp"
         android:padding="12dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -159,8 +163,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
-        android:text="Already Account ? Login Here"
-        android:textSize="17dp"
+        android:text="@string/alreadyAccount"
+        android:textSize="17sp"
         android:textColor="#FFBF00"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

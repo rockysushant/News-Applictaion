@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bcmain"
+    android:background="@drawable/login"
     tools:context=".LOGIN.login"
     >
 
@@ -51,7 +51,8 @@
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="0.1399999"
         android:background="@drawable/custom_input"
-        tools:ignore="TextFields" />
+        tools:ignore="TextFields"
+        android:autofillHints="" />
 
 
 
@@ -75,14 +76,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email"
-
         app:layout_constraintVertical_bias="0.1399999"
-
         android:drawableStart="@drawable/baseline_password_24"
         android:drawablePadding="7dp"
         android:background="@drawable/custom_input"
-
-        />
+        tools:ignore="TextFields" />
 
 
 
@@ -114,7 +112,7 @@
         android:layout_marginTop="20dp"
         android:text="@string/newAccount"
         android:textColor="#FFBF00"
-        android:textSize="17dp"
+        android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/loginbtn" />

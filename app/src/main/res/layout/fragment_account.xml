@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".Fragments.Account">
+    tools:context=".Fragments.Account"
+    tools:ignore="ExtraText">
 
 
 
@@ -13,7 +15,8 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginTop="40dp"
+        android:contentDescription="@string/todo" />
 
 
 
@@ -23,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/imageview_profile"
         android:layout_marginStart="280dp"
-        android:text="Change Dp"
+        android:text="@string/change_dp"
         />
 
 
@@ -34,7 +37,7 @@
         android:src="@drawable/profile_ui"
         android:layout_below="@+id/imageview_profile"
 
-        />
+        android:contentDescription="@string/todo" />
 
 
     <ProgressBar
@@ -82,24 +85,26 @@
         android:layout_below="@id/backImg"
 
 
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:ignore="UseCompoundDrawables">
 
 
         <ImageView
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:src="@drawable/ic_account"
-            android:layout_marginLeft="70dp"/>
+            android:layout_marginStart="70dp"
+            android:contentDescription="@string/todo" />
 
         <TextView
             android:id="@+id/myProfile"
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="My Profile"
+            android:text="@string/my_profile"
             android:textSize="18sp"
             android:textColor="@color/black"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
 
             android:layout_marginTop="5dp"/>
 
@@ -111,23 +116,25 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/Linearlayout"
         android:layout_marginTop="30dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:ignore="UseCompoundDrawables">
 
 
         <ImageView
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:src="@drawable/baseline_message_24"
-            android:layout_marginLeft="70dp"/>
+            android:layout_marginStart="70dp"
+            android:contentDescription="@string/todo" />
 
         <TextView
             android:id="@+id/messgae"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Messages"
+            android:text="@string/messages"
             android:textSize="18sp"
             android:textColor="@color/black"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
 
             />
@@ -140,23 +147,25 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/Linearlayout2"
         android:layout_marginTop="30dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:ignore="UseCompoundDrawables">
 
 
         <ImageView
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:src="@drawable/baseline_share_24"
-            android:layout_marginLeft="70dp"/>
+            android:layout_marginStart="70dp"
+            android:contentDescription="@string/todo" />
 
         <TextView
             android:id="@+id/request"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Request"
+            android:text="@string/request"
             android:textSize="18sp"
             android:textColor="@color/black"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
            />
 
@@ -168,23 +177,25 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/Linearlayout3"
         android:layout_marginTop="30dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:ignore="UseCompoundDrawables">
 
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="36dp"
-            android:layout_marginLeft="60dp"
-            android:src="@drawable/baseline_location_on_24" />
+            android:layout_marginStart="60dp"
+            android:src="@drawable/baseline_location_on_24"
+            android:contentDescription="@string/todo" />
 
         <TextView
             android:id="@+id/location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Location"
+            android:text="@string/location"
             android:textSize="18sp"
             android:textColor="@color/black"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
 
             />
@@ -197,23 +208,25 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/Linearlayout4"
         android:layout_marginTop="30dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:ignore="UseCompoundDrawables">
 
 
         <ImageView
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:src="@drawable/baseline_settings_24"
-            android:layout_marginLeft="70dp"/>
+            android:layout_marginStart="70dp"
+            android:contentDescription="@string/todo" />
 
         <TextView
             android:id="@+id/settings"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Settings"
+            android:text="@string/settings"
             android:textSize="18sp"
             android:textColor="@color/black"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             />
     </LinearLayout>
@@ -232,24 +245,26 @@
         android:gravity="center"
         android:layout_below="@id/Linearlayout5"
         android:layout_marginTop="100dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:ignore="UseCompoundDrawables">
 
 
         <ImageView
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:src="@drawable/baseline_logout_24"
-            android:layout_marginLeft="70dp"/>
+            android:layout_marginStart="70dp"
+            android:contentDescription="@string/todo" />
 
         <TextView
             android:id="@+id/btnLogOut"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Logout"
+            android:text="@string/logout"
             android:textSize="20sp"
             android:textColor="#DC1F1F"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="100dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="100dp"
             android:layout_marginTop="5dp"
            />
 
