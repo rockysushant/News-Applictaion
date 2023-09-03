@@ -49,7 +49,7 @@ public class login extends AppCompatActivity {
 
         fAuth = FirebaseAuth.getInstance();
 
-
+        // NEW USER REGISTER HERE TEXT
         mCreateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,8 +64,6 @@ public class login extends AppCompatActivity {
             public void onClick(View view) {
                 String email = mEmail.getText().toString().trim();
                 String password = mPassword.getText().toString().trim();
-
-
 
                 if(TextUtils.isEmpty(email)){
                     mEmail.setError("Email Is Required");

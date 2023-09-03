@@ -1,10 +1,14 @@
 package com.example.newsapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatImageView;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -14,10 +18,15 @@ import com.squareup.picasso.Picasso;
 
 public class NewsDetailActivity extends AppCompatActivity {
 
-    String title,desc,content,imageUrl,url;
-    private TextView titleTV,subDescTV,contentTV;
+    String title, desc, content, imageUrl, url;
+
+
+    private TextView titleTV, subDescTV, contentTV;
+
+
     private ImageView newsIV;
     private Button readNewsBtn;
+    private AppCompatImageView shareIcon;
 
 
     @Override
@@ -35,12 +44,11 @@ public class NewsDetailActivity extends AppCompatActivity {
         contentTV = findViewById(R.id.idTVContent);
         newsIV = findViewById(R.id.idIVNews);
         readNewsBtn = findViewById(R.id.idBtnReadNews);
+        shareIcon = findViewById(R.id.shareIcon);
         titleTV.setText(title);
         subDescTV.setText(desc);
         contentTV.setText(content);
         Picasso.get().load(imageUrl).into(newsIV);
-
-
 
 
 //        readNewsBtn.setOnClickListener(new View.OnClickListener() {
@@ -63,5 +71,59 @@ public class NewsDetailActivity extends AppCompatActivity {
         });
 
 
+        shareIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent shareIntent = new Intent();
+                shareIntent.setAction(Intent.ACTION_SEND);
+                shareIntent.putExtra(Intent.EXTRA_TEXT, url);
+                shareIntent.setType("text/plain");
+                startActivity(shareIntent);
+            }
+        });
+
+
     }
+
+
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        return super.onCreateOptionsMenu(menu);
+//        return true;
+//
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//        if(item.getItemId() == R.id.share){
+//            Intent i = Intent.app
+//
+//        }else{
+//            return super.onOptionsItemSelected(item);
+//
+//        }
+//        return true;
+//    }
+
+
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.nav_items, menu);
+//        return true;
+//    }
+
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        if (item.getItemId() == R.id.share) {
+//            Intent shareIntent = new Intent();
+//            shareIntent.setAction(Intent.ACTION_SEND);
+//            shareIntent.putExtra(Intent.EXTRA_TEXT, "WE ARE SHARING DATA");
+//            shareIntent.setType("text/plain");
+//            startActivity(shareIntent);
+//            return true;
+//        } else {
+//            return super.onOptionsItemSelected(item);
+//        }
+//    }
+
 }

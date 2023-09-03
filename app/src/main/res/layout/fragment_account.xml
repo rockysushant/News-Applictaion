@@ -10,10 +10,14 @@
 
 
 
+
+
+
     <ImageView
         android:id="@+id/imageview_profile"
         android:layout_width="120dp"
         android:layout_height="120dp"
+        android:src="@drawable/mypic"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:contentDescription="@string/todo" />

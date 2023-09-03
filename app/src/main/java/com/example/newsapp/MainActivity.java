@@ -6,8 +6,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 
 import com.example.newsapp.Fragments.Account;
 import com.example.newsapp.Fragments.Home;
@@ -65,11 +67,6 @@ public class MainActivity extends AppCompatActivity  {
 
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
     public void onBackPressed() {
 
         Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.frame_layout);
@@ -84,7 +81,10 @@ public class MainActivity extends AppCompatActivity  {
 
     }
 
-
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        return super.onPrepareOptionsMenu(menu);
+    }
 
     @SuppressLint("SuspiciousIndentation")
     public void loadFrag(Fragment fragment, boolean flag){

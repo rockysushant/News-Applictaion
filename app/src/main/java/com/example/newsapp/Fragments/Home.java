@@ -84,40 +84,42 @@ public class Home extends Fragment  implements CategoryRVAdapter.CategoriesClick
 
         newsRVAdapter.notifyDataSetChanged();
 
-//        listView = view.findViewById(R.id.listView);
-//        arrayAdapter = new ArrayAdapter<String>(requireContext(), android.R.layout.simple_list_item_1,name);
-//        listView.setAdapter(arrayAdapter);
-//
+        listView = view.findViewById(R.id.listView);
+        arrayAdapter = new ArrayAdapter<String>(requireContext(), android.R.layout.simple_list_item_1,name);
+        listView.setAdapter(arrayAdapter);
+
+
 
 
 
     }
 
 
-//    @Override
-//    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-//
-//        requireActivity().getMenuInflater().inflate(R.menu.nav_items,menu);
-//        MenuItem menuItem = menu.findItem(R.id.action_search);
-//        SearchView searchView = (SearchView) menuItem;
-//        searchView.setQueryHint("Type here to search");
-//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-//            @Override
-//            public boolean onQueryTextSubmit(String query) {
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onQueryTextChange(String newText) {
-//
-//                arrayAdapter.getFilter().filter(newText);
-//                return false;
-//            }
-//        });
-//
-//
-//        super.onCreateOptionsMenu(menu, inflater);
-//    }
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+
+        requireActivity().getMenuInflater().inflate(R.menu.nav_items,menu);
+        MenuItem menuItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) menuItem;
+        searchView.setQueryHint("Type here to search");
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                arrayAdapter.getFilter().filter(newText);
+
+                return true;
+            }
+        });
+
+
+       super.onCreateOptionsMenu(menu, inflater);
+    }
 
     private void getCategories(){
         categoryRVModalArrayList.add(new CategoryRVModal("All","https://images.unsplash.com/photo-1570900808791-d530855f79e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWxsfGVufDB8fDB8fHww&auto=format&fit=crop&w=400&q=60"));
@@ -134,6 +136,7 @@ public class Home extends Fragment  implements CategoryRVAdapter.CategoriesClick
     }
 
     private void getNews(String category){
+
         category = category.toLowerCase();
         loadingPB.setVisibility(View.VISIBLE);
         articlesArrayList.clear();
@@ -163,6 +166,7 @@ public class Home extends Fragment  implements CategoryRVAdapter.CategoriesClick
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onResponse(Call<NewsModal> call, Response<NewsModal> response) {
+
                 Log.d("url", response.raw().request().url().toString());
                 NewsModal newsModal = response.body();
                 loadingPB.setVisibility(View.GONE);

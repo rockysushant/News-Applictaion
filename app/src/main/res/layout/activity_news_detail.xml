@@ -7,21 +7,20 @@
     android:background="@color/black_shade_1"
     tools:context=".NewsDetailActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/black_shade_1"
-        app:titleTextColor="@color/yellow"
-        app:title="@string/app_name"
 
-
+    <include
+        android:id="@+id/toolbar_view"
+        layout="@layout/fragment_toolbar"
         />
+
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/idBtnReadNews"
-        android:layout_below="@+id/toolbar">
+        android:layout_below="@id/toolbar_view"
+        >
 
 
         <RelativeLayout
@@ -92,7 +91,7 @@
 
     <Button
         android:id="@+id/idBtnReadNews"
-        android:layout_width="320dp"
+        android:layout_width="450dp"
         android:layout_height="wrap_content"
         android:text="@string/readFullNews"
         android:background="@drawable/read_full_news_btn"

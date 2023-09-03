@@ -62,13 +62,8 @@ public class Register extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
 
-//        if (fAuth.getCurrentUser() != null) {
-//            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-//            finish();
-//        }
 
-
-        // ALREADY ACCOUNT PLEASE LOGIN LOGIC
+        // ALREADY ACCOUNT PLEASE LOGIN TEXT
 
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,7 +74,7 @@ public class Register extends AppCompatActivity {
         });
 
 
-        // REGISTER BUTTON LOGIC
+        // REGISTER BUTTON
 
         mRegisterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
