@@ -17,8 +17,7 @@ public class Ask {
     // to de_attach file from git
 
     // in Account up variable and down vriable
-    //activitmain.xml botoom nav error
+    //
 
-    //NewsDetailActivity.java
 
 }

@@ -101,19 +101,19 @@ public class Account extends Fragment {
         initView(view);
         getUserDataFromFirebase();
 
-        imageView = view.findViewById(R.id.imageview_profile);  // image view image viww gallery top
-        Button button = view.findViewById(R.id.changeDp);
+//        imageView = view.findViewById(R.id.imageview_profile);  // image view image viww gallery top
+//        Button button = view.findViewById(R.id.changeDp);
 
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(Intent.ACTION_PICK);
-                i.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(i,GALLERY_REQ_CODE);
-
-            }
-        });
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(Intent.ACTION_PICK);
+//                i.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+//                startActivityForResult(i,GALLERY_REQ_CODE);
+//
+//            }
+//        });
 
         TextView myProfile = view.findViewById(R.id.myProfile);
         myProfile.setOnClickListener(new View.OnClickListener() {
@@ -191,18 +191,24 @@ public class Account extends Fragment {
     }
 
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
 
-        super.onActivityResult(requestCode, resultCode, data);
+    // CHANGE DP
 
-        if(resultCode==RESULT_OK){
-            if(resultCode==GALLERY_REQ_CODE){
-                //for gallery
+//    @Override
+//    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+//
+//        super.onActivityResult(requestCode, resultCode, data);
+//
+//        if(resultCode==RESULT_OK){
+//            if(resultCode==GALLERY_REQ_CODE){
+//                //for gallery
+//
+//                imageView.setImageURI(data.getData());
+//
+//            }
+//        }
+//    }
 
-                imageView.setImageURI(data.getData());
 
-            }
-        }
-    }
+
 }

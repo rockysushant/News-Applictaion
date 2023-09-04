@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".toolbar">
 
 
@@ -10,11 +11,31 @@
         android:id="@+id/toolBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/black_shade_1"
+        app:title="The Daily Planet"
+        app:titleTextColor="@color/yellow"
+
+
+
 
         >
+
+        <TextView
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="#E1CF2F"
+            android:textSize="18sp"
+            android:padding="2dp"
+            android:textStyle="bold"
+
+            />
+
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/shareIcon"
@@ -22,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="20dp"
-                android:src="@drawable/baseline_youtube_searched_for_24"/>
+                android:src="@drawable/newshare"/>
 
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
