@@ -37,6 +37,8 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.Objects;
+
 
 public class Account extends Fragment {
 
@@ -116,51 +118,29 @@ public class Account extends Fragment {
 //        });
 
         TextView myProfile = view.findViewById(R.id.myProfile);
-        myProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ((MainActivity) getActivity()).loadFrag(new Myprofile(), false);
+        myProfile.setOnClickListener(view14 -> ((MainActivity) requireActivity()).loadFrag(new Myprofile(), false));
 
-            }
-        });
+
 
 
         TextView message = view.findViewById(R.id.messgae);
-        message.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ((MainActivity)getActivity()).loadFrag(new Message(), false);
-
-            }
-        });
+        message.setOnClickListener(view13 -> ((MainActivity) requireActivity()).loadFrag(new Message(), false));
 
 
         TextView request = view.findViewById(R.id.request);
-        request.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                ((MainActivity)getActivity()).loadFrag(new Request(), false);
-
-            }
-        });
+        request.setOnClickListener(view12 -> ((MainActivity)requireActivity()).loadFrag(new Request(), false));
 
 
         TextView location = view.findViewById(R.id.location);
-        location.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ((MainActivity)getActivity()).loadFrag(new Location(), false);
-
-            }
-        });
+        location.setOnClickListener(
+                view1 -> ((MainActivity)requireActivity()).loadFrag(new Location(), false));
 
 
         TextView settings = view.findViewById(R.id.settings);
         settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((MainActivity)getActivity()).loadFrag(new Settings(), false);
+                ((MainActivity)requireActivity()).loadFrag(new Settings(), false);
 
             }
         });
@@ -169,22 +149,20 @@ public class Account extends Fragment {
         // LOG OUT BUTTON
 
         TextView btnLogout = view.findViewById(R.id.btnLogOut);
-        btnLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        btnLogout.setOnClickListener(view15 -> {
 
-                SharedPreferences pref = requireContext().getSharedPreferences("login",MODE_PRIVATE);
-                SharedPreferences.Editor editor = pref.edit();
-                editor.clear();
-                editor.apply();
+            SharedPreferences pref = requireContext().getSharedPreferences("login",MODE_PRIVATE);
+            SharedPreferences.Editor editor = pref.edit();
+            editor.clear();
+            editor.apply();
 
 
-                Toast.makeText(requireContext(),"Log Out Successfully",Toast.LENGTH_SHORT).show();
-                Intent  iHome  = new Intent(requireContext(), login.class);
-                startActivity(iHome);
-                requireActivity().finish();
-            }
+            Toast.makeText(requireContext(),"Log Out Successfully",Toast.LENGTH_SHORT).show();
+            Intent  iHome  = new Intent(requireContext(), login.class);
+            startActivity(iHome);
+            requireActivity().finish();
         });
+
 
 
 
@@ -209,6 +187,12 @@ public class Account extends Fragment {
 //        }
 //    }
 
+
+
+//    public void delete(View view){
+//        Intent intent = new Intent(getContext(),Settings.class);
+//        startActivity(intent);
+//    }
 
 
 }

@@ -35,16 +35,15 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Home extends Fragment  implements CategoryRVAdapter.CategoriesClickInterface{
 
+
     private RecyclerView newsRv, categoryRv;
     private ProgressBar loadingPB;
     private ArrayList<Articles> articlesArrayList;
-    private ArrayList<CategoryRVModal> categoryRVModalArrayList = new ArrayList<>();
+    private final ArrayList<CategoryRVModal> categoryRVModalArrayList = new ArrayList<>();
     private CategoryRVAdapter categoryRVAdapter;
     private NewsRVAdapter newsRVAdapter;
 
-
     ArrayAdapter<String> arrayAdapter;
-
 
     ListView listView;
     String[] name = {"All","Technology","Science","tech","hello"};
@@ -63,6 +62,7 @@ public class Home extends Fragment  implements CategoryRVAdapter.CategoriesClick
     }
 
 
+    @SuppressLint("NotifyDataSetChanged")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -87,9 +87,6 @@ public class Home extends Fragment  implements CategoryRVAdapter.CategoriesClick
         listView = view.findViewById(R.id.listView);
         arrayAdapter = new ArrayAdapter<String>(requireContext(), android.R.layout.simple_list_item_1,name);
         listView.setAdapter(arrayAdapter);
-
-
-
 
 
     }
@@ -121,8 +118,9 @@ public class Home extends Fragment  implements CategoryRVAdapter.CategoriesClick
        super.onCreateOptionsMenu(menu, inflater);
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private void getCategories(){
-        categoryRVModalArrayList.add(new CategoryRVModal("All","https://images.unsplash.com/photo-1570900808791-d530855f79e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWxsfGVufDB8fDB8fHww&auto=format&fit=crop&w=400&q=60"));
+        categoryRVModalArrayList.add(new CategoryRVModal("All","https://images.unsplash.com/photo-1693115823976-7809af2b2c87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"));
         categoryRVModalArrayList.add(new CategoryRVModal("Technology","https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dGVjaG5vbG9neXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60"));
         categoryRVModalArrayList.add(new CategoryRVModal("Science","https://images.unsplash.com/photo-1564325724739-bae0bd08762c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c2NpZW5jZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60"));
         categoryRVModalArrayList.add(new CategoryRVModal("Health","https://images.unsplash.com/photo-1477332552946-cfb384aeaf1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGVhbHRofGVufDB8fDB8fHww&auto=format&fit=crop&w=400&q=60"));
@@ -130,7 +128,6 @@ public class Home extends Fragment  implements CategoryRVAdapter.CategoriesClick
         categoryRVModalArrayList.add(new CategoryRVModal("General","https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2VuZXJhbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60"));
         categoryRVModalArrayList.add(new CategoryRVModal("Business","https://images.unsplash.com/photo-1664575599736-c5197c684128?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGJ1c2luZXNzfGVufDB8fDB8fHww&auto=format&fit=crop&w=400&q=60"));
         categoryRVModalArrayList.add(new CategoryRVModal("Entertainment","https://media.istockphoto.com/id/1425960645/photo/sports-fans-watching-a-match-and-celebrating-at-a-bar-rooftop.webp?b=1&s=170667a&w=0&k=20&c=_6Bq-zXMnwK5Te6WRNs1B9zx5d31leU9nufqry1vaA8="));
-
 
         categoryRVAdapter.notifyDataSetChanged();
     }
@@ -165,11 +162,12 @@ public class Home extends Fragment  implements CategoryRVAdapter.CategoriesClick
 
             @SuppressLint("NotifyDataSetChanged")
             @Override
-            public void onResponse(Call<NewsModal> call, Response<NewsModal> response) {
+            public void onResponse(@NonNull Call<NewsModal> call, @NonNull Response<NewsModal> response) {
 
                 Log.d("url", response.raw().request().url().toString());
                 NewsModal newsModal = response.body();
                 loadingPB.setVisibility(View.GONE);
+
                 ArrayList<Articles> articles = newsModal.getArticles();
                 for(int i = 0; i<articles.size(); i++){
                     articlesArrayList.add(new Articles(articles.get(i).getTitle(),articles.get(i).getDescription(),articles.get(i).getUrlToImage(),
@@ -182,7 +180,7 @@ public class Home extends Fragment  implements CategoryRVAdapter.CategoriesClick
             }
 
             @Override
-            public void onFailure(Call<NewsModal> call, Throwable t) {
+            public void onFailure(@NonNull Call<NewsModal> call, @NonNull Throwable t) {
                 Toast.makeText(requireContext(), "Fail to get News", Toast.LENGTH_SHORT).show();
 
             }

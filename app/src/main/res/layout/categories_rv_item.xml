@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="130dp"
     android:layout_margin="5dp"
     android:layout_height="70dp"
@@ -30,9 +31,5 @@
             android:textColor="@color/white"
             android:textStyle="bold"/>
 
-
     </RelativeLayout>
-
-
-
 </androidx.cardview.widget.CardView>

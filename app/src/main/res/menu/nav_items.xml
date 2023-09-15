@@ -3,28 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item android:title="@string/home"
-        android:icon="@drawable/baseline_home_24"
+        android:icon="@drawable/home"
         android:id="@+id/home"
         />
     <item android:title="@string/notification"
-        android:icon="@drawable/baseline_circle_notifications_24"
+        android:icon="@drawable/notification"
         android:id="@+id/notification"
         />
     <item android:title="@string/account"
-        android:icon="@drawable/baseline_account_circle_24"
+        android:icon="@drawable/account"
         android:id="@+id/account"
         />
-
-
-
-
-<!--    <item-->
-<!--        android:id="@+id/share"-->
-<!--        android:icon="@drawable/baseline_route_24"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:showAsAction="always"-->
-<!--        android:title="Share"/>-->
-
 
 
 </menu>

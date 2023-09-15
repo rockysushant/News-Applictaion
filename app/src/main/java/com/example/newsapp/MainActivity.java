@@ -6,10 +6,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import android.annotation.SuppressLint;
-import android.content.Intent;
+
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
+
 
 import com.example.newsapp.Fragments.Account;
 import com.example.newsapp.Fragments.Home;
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity  {
 
         bnView = findViewById(R.id.bnView);
 
-        bnView.setOnNavigationItemSelectedListener(item -> {
+        bnView.setOnItemSelectedListener(item -> {
             int id = item.getItemId();
 
             if(id==R.id.home){
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity  {
     }
 
 
-    //  LOG OUT DIALOUGE
+    //  LOG OUT DIALOGUE
 
 //    public  void showAlertDialog(View v){
 //        AlertDialog.Builder alert = new AlertDialog.Builder(this);

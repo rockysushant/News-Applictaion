@@ -28,8 +28,10 @@ public class NewsRVAdapter  extends RecyclerView.Adapter<NewsRVAdapter.ViewHolde
     @Override
     public NewsRVAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.news_rv_item,parent,false);
-        return new NewsRVAdapter.ViewHolder(view);
+        return new ViewHolder(view);
     }
+
+
 
     @Override
     public void onBindViewHolder(@NonNull NewsRVAdapter.ViewHolder holder, int position) {
@@ -40,18 +42,17 @@ public class NewsRVAdapter  extends RecyclerView.Adapter<NewsRVAdapter.ViewHolde
 
         Picasso.get().load(articles.getUrlToImage()).into(holder.newsIV);
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent  = new Intent(context, NewsDetailActivity.class);
-                intent.putExtra("title",articles.getTitle());
-                intent.putExtra("content",articles.getContent());
-                intent.putExtra("desc",articles.getDescription());
-                intent.putExtra("image",articles.getUrlToImage());
-                intent.putExtra("url",articles.getUrl());
+        holder.itemView.setOnClickListener(
+                view -> {
 
-                context.startActivity(intent);
-            }
+            Intent intent  = new Intent(context, NewsDetailActivity.class);
+            intent.putExtra("title",articles.getTitle());
+            intent.putExtra("content",articles.getContent());
+            intent.putExtra("desc",articles.getDescription());
+            intent.putExtra("image",articles.getUrlToImage());
+            intent.putExtra("url",articles.getUrl());
+
+            context.startActivity(intent);
         });
     }
 
@@ -60,9 +61,9 @@ public class NewsRVAdapter  extends RecyclerView.Adapter<NewsRVAdapter.ViewHolde
         return articlesArrayList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView titleTV,subTitleTV;
-        private ImageView newsIV;
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        private final TextView titleTV,subTitleTV;
+        private final ImageView newsIV;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             titleTV = itemView.findViewById(R.id.idTVNewsHeading);

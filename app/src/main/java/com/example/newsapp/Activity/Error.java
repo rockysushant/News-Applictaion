@@ -1,6 +1,6 @@
 package com.example.newsapp.Activity;
 
-public class Ask {
+public class Error {
 
 
 
@@ -17,7 +17,8 @@ public class Ask {
     // to de_attach file from git
 
     // in Account up variable and down vriable
-    //
+    //string lwngth breadth
+    //home 174
 
 
 }

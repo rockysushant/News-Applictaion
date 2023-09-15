@@ -21,7 +21,7 @@ public class NewsDetailActivity extends AppCompatActivity {
     String title, desc, content, imageUrl, url;
 
 
-    private TextView titleTV, subDescTV, contentTV;
+    private  TextView titleTV, subDescTV, contentTV;
 
 
     private ImageView newsIV;
@@ -61,69 +61,23 @@ public class NewsDetailActivity extends AppCompatActivity {
 //        });
 
 
-        readNewsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-                startActivity(i);
-            }
-
+        readNewsBtn.setOnClickListener(view -> {
+            Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            startActivity(i);
         });
 
 
-        shareIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent shareIntent = new Intent();
-                shareIntent.setAction(Intent.ACTION_SEND);
-                shareIntent.putExtra(Intent.EXTRA_TEXT, url);
-                shareIntent.setType("text/plain");
-                startActivity(shareIntent);
-            }
+        shareIcon.setOnClickListener(view -> {
+            Intent shareIntent = new Intent();
+            shareIntent.setAction(Intent.ACTION_SEND);
+            shareIntent.putExtra(Intent.EXTRA_TEXT, url);
+            shareIntent.setType("text/plain");
+            startActivity(shareIntent);
         });
 
 
     }
 
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        return super.onCreateOptionsMenu(menu);
-//        return true;
-//
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//        if(item.getItemId() == R.id.share){
-//            Intent i = Intent.app
-//
-//        }else{
-//            return super.onOptionsItemSelected(item);
-//
-//        }
-//        return true;
-//    }
-
-
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.nav_items, menu);
-//        return true;
-//    }
-
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        if (item.getItemId() == R.id.share) {
-//            Intent shareIntent = new Intent();
-//            shareIntent.setAction(Intent.ACTION_SEND);
-//            shareIntent.putExtra(Intent.EXTRA_TEXT, "WE ARE SHARING DATA");
-//            shareIntent.setType("text/plain");
-//            startActivity(shareIntent);
-//            return true;
-//        } else {
-//            return super.onOptionsItemSelected(item);
-//        }
-//    }
 
 }

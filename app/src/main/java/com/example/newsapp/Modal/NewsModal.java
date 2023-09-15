@@ -1,7 +1,6 @@
 package com.example.newsapp.Modal;
 
 import com.example.newsapp.Articles;
-
 import java.util.ArrayList;
 
 public class NewsModal {

@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".Fragments.Account"
+
     tools:ignore="ExtraText">
 
 
@@ -234,6 +235,40 @@
             android:layout_marginTop="5dp"
             />
     </LinearLayout>
+
+
+
+    //DELETE
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/Linearlayout6"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/Linearlayout5"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:orientation="horizontal"-->
+<!--        tools:ignore="UseCompoundDrawables">-->
+
+
+<!--        <ImageView-->
+<!--            android:layout_width="36dp"-->
+<!--            android:layout_height="36dp"-->
+<!--            android:src="@drawable/baseline_settings_24"-->
+<!--            android:layout_marginStart="70dp"-->
+<!--            android:contentDescription="@string/todo" />-->
+
+<!--        <TextView-->
+<!--            android:onClick="delete"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="DELETE"-->
+<!--            android:textSize="18sp"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:layout_marginStart="20dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            />-->
+<!--    </LinearLayout>-->
+
 
 
 

@@ -17,8 +17,13 @@
         android:id="@+id/bnView"
         android:layout_width="match_parent"
         android:layout_height="55dp"
+
+        android:background="@drawable/bottom_nav_round"
         app:menu="@menu/nav_items"
         android:layout_alignParentBottom="true"
+        app:itemRippleColor="@color/purple_500"
+
+
         />
 
 
